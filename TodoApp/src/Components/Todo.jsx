@@ -23,7 +23,8 @@ export default function Todo(){
             </div>
             </form>
             {console.log(todos)}
-             <div className={Styles.list}>{todos.map((item)=>( <TodoItem  key={item} item={item}/>))}</div>
+             <div className={Styles.list}>{todos.map((item)=>( <TodoItem  key={item} item={item} setTodos={setTodos}
+              todos={todos}/>))}</div>
             
         </div>
     );
