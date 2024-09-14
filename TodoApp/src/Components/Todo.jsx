@@ -9,6 +9,7 @@ export default function Todo(){
     const [todos,setTodos]= useState([]);
     const completedTodos= todos.filter((todo) => todo.done).length;
     const totalTodos=todos.length;
+    const sortTodos= todos.slice().sort((a,b) => Number(a.done) - Number(b.done));
 
     function handleTodo (e) {
         e.preventDefault();
@@ -28,8 +29,10 @@ export default function Todo(){
             </form>
             {console.log(todos)}
 
-             <div className={Styles.list}>{todos.map((item)=>( <TodoItem  key={item.name} item={item} setTodos={setTodos}
-              todos={todos}/>))}</div>
+             <div className={Styles.list}>
+                {sortTodos.map((item)=>( <TodoItem  key={item.name} item={item} setTodos={setTodos}
+              todos={todos}/>))}
+              </div>
             <Footer completedTodos={completedTodos} totalTodos={totalTodos}/>
         </div>
     );
