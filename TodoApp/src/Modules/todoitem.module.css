@@ -28,3 +28,6 @@
     font-size: 12px;
     
 }
+.complete{
+    text-decoration: line-through;
+}
